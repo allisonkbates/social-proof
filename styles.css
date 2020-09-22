@@ -24,6 +24,13 @@ html, body {
     url('./images/bg-pattern-bottom-mobile.svg');
   background-position: top left, bottom right;
   background-repeat: no-repeat;
+  width: min(90%, 1100px);
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
 }
 
 .intro-container, .rating-container, .quote-container {
@@ -126,15 +133,6 @@ h4 {
 @media only screen and (min-width: 800px) {
 
   .container {
-    display: grid;
-    grid-template-columns: 10% 1fr 1fr 10%;
-    grid-template-rows: 15% 1fr 1fr;
-    grid-template-areas: 
-    ". . . ."
-    ". intro rating ."
-    ". quote quote .";
-  }
-  .container {
     background-image: 
       url('./images/bg-pattern-top-desktop.svg'),
       url('./images/bg-pattern-bottom-desktop.svg');
@@ -142,17 +140,20 @@ h4 {
     background-repeat: no-repeat;
   }
 
+  .row {
+    flex-direction: row;
+    margin: 5%;
+  }
+
   .intro-container, .rating-container, .quote-container {
     padding: 0px 0px;
   }
 
   .intro-container {
-    grid-area: intro;
     max-width: 450px;
   }
 
   .rating-container {
-    grid-area: rating;
     padding: 48px 0px;
     display: flex;
     flex-direction: column;
@@ -179,14 +180,12 @@ h4 {
   }
 
   .quote-container {
-    grid-area: quote;
     display: flex;
     flex-direction: row;
     align-items: center;
   }
 
   .quote-card {
-    width: 350px;
     margin-right: 32px;
   }
 
